@@ -4,6 +4,7 @@ package com.github.curriculeon;
  * @author leon on 03/02/2019.
  */
 
+import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.io.PrintStream;
@@ -39,6 +40,7 @@ public class IOConsole {
      * @param args : optional arguments to send for string formatting
      */
     public void println(String val, Object... args) {
+        out.format(val + "\n", args);
     }
 
     /**
@@ -47,7 +49,9 @@ public class IOConsole {
      * @return user's input as String
      */
     public String getStringInput(String prompt, Object... args) {
-        return null;
+
+        String userInput = scanner.nextLine();
+        return userInput;
     }
 
     /**
@@ -56,7 +60,8 @@ public class IOConsole {
      * @return user's input as integer
      */
     public Integer getIntegerInput(String prompt, Object... args) {
-        return null;
+        Integer userInput = scanner.nextInt();
+        return userInput;
     }
 
     /**
@@ -65,7 +70,8 @@ public class IOConsole {
      * @return user's input as double
      */
     public Double getDoubleInput(String prompt, Object... args) {
-        return null;
+        Double results = scanner.nextDouble();
+        return results;
     }
 
     /**
@@ -74,7 +80,8 @@ public class IOConsole {
      * @return user's input as float
      */ // TODO - Change recursion to iteration
     public Float getFloatInput(String prompt, Object... args) {
-        return null;
+        Float results = scanner.nextFloat();
+        return results;
     }
 
     /**
@@ -83,6 +90,7 @@ public class IOConsole {
      * @return user's input as long
      */ // TODO - Change recursion to iteration
     public Long getLongInput(String prompt, Object... args) {
-        return null;
+        Long results = scanner.nextLong();
+       return results;
     }
 }
